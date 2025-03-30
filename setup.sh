@@ -93,4 +93,4 @@ echo "Minecraft, skyclient.co"
 
 # Dingen gewoon in apt
 echo "Steam etc wordt gedownload..."
-apt install -y steam audacity virtualbox gimp mangohud goverlay protontricks winetricks
+apt install -y steam audacity virtualbox gimp mangohud goverlay protontricks winetricks neofetch
