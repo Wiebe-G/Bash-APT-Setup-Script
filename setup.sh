@@ -10,22 +10,12 @@ fi
 echo "Pakketlijst wordt geüpdatet..."
 apt update
 
-# Librewolf repo
-echo "LibreWolf repository wordt toegevoegd..."
-echo "deb [signed-by=/usr/share/keyrings/librewolf.asc] https://deb.librewolf.net bullseye main" > /etc/apt/sources.list.d/librewolf.list
+# librewolf
+apt update && apt install extrepo -y
 
-# Librewolf GPG key
-wget -qO - https://deb.librewolf.net/librewolf.asc | tee /usr/share/keyrings/librewolf.asc
+extrepo enable librewolf
 
-# apt update, duh
-echo "Pakketlijst wordt opnieuw geüpdatet..."
-apt update
-echo "apt update voltooid"
-
-# Installeer LibreWolf
-echo "LibreWolf wordt geïnstalleerd..."
-apt install -y librewolf
-echo "Librewolf is geinstalleerd"
+apt update && apt install librewolf -y
 
 # VSCodium repo toevoegen
 echo "VSCodium repository wordt toegevoegd..."
@@ -58,9 +48,6 @@ echo "Lutris flatpak is geinstalleerd"
 echo "Heroic Games Launcher wordt geinstalleerd"
 flatpak install flathub com.heroicgameslauncher.hgl
 echo "Heroic Games Launcher is geinstalleerd"
-
-# NOTE: These instructions only work for 64-bit Debian-based
-# Linux distributions such as Ubuntu, Mint etc.
 
 # signal desktop
 # signing key
